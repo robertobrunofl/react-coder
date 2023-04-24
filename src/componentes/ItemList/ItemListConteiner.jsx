@@ -1,12 +1,12 @@
 import{ useState, useEffect} from "react";
 import ItemList from "./ItemList"
 import { products } from "../../productsMock";
-import useCounter  from "../../utils/hooks/useCounter"
+/* import useCounter  from "../../utils/hooks/useCounter" */
 import { useParams } from "react-router-dom";
 
 export const ItemListContainer = () => {
 
-  const{ counter, increment} = useCounter()
+/*   const{ counter, increment} = useCounter() */
 
    //codigo viejo//
   const [items , setItems ] = useState([ ])

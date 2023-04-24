@@ -5,9 +5,10 @@ import { Navbar } from './componentes/Navbar/Navbar';
 import { ItemDetailContainer } from './componentes/ItemDetail/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CartContainer from './componentes/Cart/CartContainer';
+/* import { useParams } from 'react-router-dom'; */
 
 function App() {
-  /* gi */
+  
 
   return (
     
@@ -20,7 +21,7 @@ function App() {
         <Route path="/category/:name" element={ <ItemListContainer/> } />
         <Route path="/itemDetail/:id" element={ <ItemDetailContainer/> } />
         <Route path="/cart" element={ <CartContainer/> }/>
-        <Route path="/*" element={<h1>No Existe</h1>} />
+        <Route path="*" element={<h1>No Existe</h1>} />
       </Route>
 
     </Routes>

@@ -17,7 +17,7 @@ const ItemCard = ({item}) => {
               image={item.img}
               title="green iguana"
             />
-            <CardContent>
+            <CardContent style={{textAlign:"center"}}>
               <Typography gutterBottom variant="h5" component="div">
                 {item.title}
               </Typography>
@@ -28,8 +28,8 @@ const ItemCard = ({item}) => {
                 {item.price}
               </Typography>
             </CardContent>
-            <CardActions style={{ height: 100 }}>
-              <Link to="/itemDetail">
+            <CardActions style={{ display: "flex", height: 100, justifyContent: "center"}}>
+              <Link to={`/itemDetail/${item.id}`}>
                 <Button variant="contained" size="small">
                   Ver Detalle
                 </Button>

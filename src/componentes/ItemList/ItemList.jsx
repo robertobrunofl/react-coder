@@ -1,5 +1,4 @@
 import { Margin } from "@mui/icons-material";
-import { Link } from "react-router-dom";
 
 import ItemCard from "./ItemCard";
 /* import styles from "./ItemList.css" */
@@ -15,6 +14,7 @@ const ItemList = ({ items }) => {
         padding: "40px",
         flexWrap: "wrap",
         backgroundColor: "grey",
+        gap: "20px"
       }}
     >
       {items.map((item) => {
