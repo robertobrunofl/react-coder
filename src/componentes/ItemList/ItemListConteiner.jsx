@@ -10,15 +10,15 @@ export const ItemListContainer = () => {
 
    //codigo viejo//
   const [items , setItems ] = useState([ ])
-  const { categoryName }= useParams()
+  const { name }= useParams()
   /* const navigate =useNavigate() */
 
   useEffect(() => {
 
-    const productsFiltered = products.filter( prod => prod.category === categoryName)
+    const productsFiltered = products.filter( prod => prod.category === name)
 
     const tarea = new Promise((resolve, reject) => {
-      resolve(categoryName ? productsFiltered : products);
+      resolve(name ? productsFiltered : products);
     });
   
     tarea
@@ -26,7 +26,7 @@ export const ItemListContainer = () => {
     .catch((error) => console.log(error));
 
     
-  },[categoryName])
+  },[name])
   
 
   return (

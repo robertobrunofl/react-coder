@@ -16,10 +16,11 @@ export const Navbar = () => {
           alt="Este es el logo del restaurante"
         />
         </Link>
-        <ul style={{ display: "flex", gap: "100px" }}>
-        <button variant="contained" onClick={()=>navigate("/category/bebidas")}>Menu</button>
-          <button variant="contained" onClick={()=>navigate("/category/bebidas")}>Entradas</button>
-          <button variant="contained" onClick={()=>navigate("/category/bebidas")}>Bebidas</button>
+        <ul style={{ display: "flex", gap: "100px"}}>
+        <button variant="contained" onClick={()=>navigate("/")}>Menu</button>
+        <button variant="contained" onClick={()=>navigate("/category/Entrada")}>Entradas</button>
+        <button variant="contained" onClick={()=>navigate("/category/Principal")}>Principales</button>
+        <button variant="contained" onClick={()=>navigate("/category/Bebida")}>Bebidas</button>
         </ul>
 
         <CartWidget />
