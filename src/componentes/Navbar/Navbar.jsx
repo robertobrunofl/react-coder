@@ -1,11 +1,31 @@
-import { flexbox } from "@mui/system";
+
 import CartWidget from "../CartWidget/CartWidget";
 import styles from "./Navbar.module.css";
 import { Outlet, Link, useNavigate } from "react-router-dom";
+import { db } from "../../firebaseConfig";
+import {getDocs, collection} from "firebase/firestore"
+import { useEffect, useState} from "react";
 
 export const Navbar = () => {
 
-  const navigate = useNavigate()
+  const [categories, setCategories] = useState([]);
+  console.log(categories);
+
+  useEffect(() => {
+    const categoriesCollection = collection(db, "categories");
+    getDocs(categoriesCollection)
+      .then((res) => {
+        let categoriesResult = res.docs.map((category) => {
+          return {
+            ...category.data(),
+            id: category.id,
+          };
+        });
+        setCategories(categoriesResult);
+      })
+      .catch((err) => (err));
+  }, []);
+
 
   return (
     <div>
@@ -16,13 +36,15 @@ export const Navbar = () => {
           alt="Este es el logo del restaurante"
         />
         </Link>
-        <ul style={{ display: "flex", gap: "100px"}}>
-        <button variant="contained" onClick={()=>navigate("/")}>Menu</button>
-        <button variant="contained" onClick={()=>navigate("/category/Entrada")}>Entradas</button>
-        <button variant="contained" onClick={()=>navigate("/category/Principal")}>Principales</button>
-        <button variant="contained" onClick={()=>navigate("/category/Bebida")}>Bebidas</button>
-        </ul>
-
+        <div className={styles.categories}>
+        {categories.map((category) => {
+            return (
+              <Link key={category.id} to={category.path}>
+                {category.title}
+              </Link>
+            );
+          })}
+        </div>
         <CartWidget />
       </div>
       <Outlet/>

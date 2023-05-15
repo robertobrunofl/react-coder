@@ -13,8 +13,8 @@ const ItemList = ({ items }) => {
         minHeight: "90vh",
         padding: "40px",
         flexWrap: "wrap",
-        backgroundColor: "grey",
-        gap: "20px"
+        backgroundColor: "black",
+        gap: "25px"
       }}
     >
       {items.map((item) => {

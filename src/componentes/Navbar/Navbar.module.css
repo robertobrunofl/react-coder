@@ -1,5 +1,4 @@
-
-.containerNavbar {
+/* .containerNavbar {
     background-color: black;
     display: flex;
     justify-content: space-between;
@@ -24,4 +23,35 @@ ul li{
     border-style: solid black;
     border-radius:35px;
     list-style: none;
-    }
+    } */
+.containerNavbar {
+  width: 100%;
+  height: 14vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  align-items: center;
+  /* padding: 5px; */
+}
+
+a {
+  text-decoration: none;
+  color: orange;
+  font-weight: bold;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+}
+.categories a {
+  background-color: beige;
+  padding: 10px 20px;
+  color: black;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}

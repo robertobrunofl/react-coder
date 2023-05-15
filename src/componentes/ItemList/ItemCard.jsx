@@ -11,27 +11,28 @@ import {
 const ItemCard = ({item}) => {
   return (
     <div>
-        <Card sx={{ width: 345, height: 350 }}>
+        <Card sx={{ width: 355, height: 400 }}>
             <CardMedia
-              sx={{ height: 140 }}
+              sx={{ height: 150 }}
               image={item.img}
-              title="green iguana"
+              title="image platos"
             />
-            <CardContent style={{textAlign:"center"}}>
+            <CardContent style={{textAlign:"center", fontFamily:"inter"}}>
               <Typography gutterBottom variant="h5" component="div">
                 {item.title}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="subtitle2" color="text.secondary">
                 {item.description}
               </Typography>
-              <Typography variant="body2" color="primary">
+              <Typography variant="h6" color="orange">
+                Precio: 
                 {item.price}
               </Typography>
             </CardContent>
-            <CardActions style={{ display: "flex", height: 100, justifyContent: "center"}}>
+            <CardActions style={{ display: "flex", height: 50, justifyContent: "space-around"}}>
               <Link to={`/itemDetail/${item.id}`}>
                 <Button variant="contained" size="small">
-                  Ver Detalle
+                  + Detalles
                 </Button>
               </Link>
             </CardActions>
