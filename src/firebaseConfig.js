@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import{ getFirestore } from "firebase/firestore"
 const firebaseConfig = {
-  apiKey: "AIzaSyA94vKtbDbB9ZGeoiuVacVS5D6uwjK3SFI",
-  authDomain: "react-coder-34743.firebaseapp.com",
-  projectId: "react-coder-34743",
-  storageBucket: "react-coder-34743.appspot.com",
-  messagingSenderId: "273839739070",
-  appId: "1:273839739070:web:2aedacae0202016e574eef",
-  measurementId: "G-8WEQS0KDVF"
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN ,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_REACT_APP_APPID,
+  measurementId: process.env.REACT_APP_MEASUREMENTID 
 };
 
 
