@@ -37,15 +37,15 @@ export const FormCheckoutContainer = () => {
       setOrderId(res.id);
       Swal.fire({
         icon: "success",
-        title: "Orden creada",
-        text: `El ID de la orden es ${res.id}`,
+        title: "Pedido Creado",
+        text: `El ID DEL PEDIDO ES ${res.id}`,
       });
     })
     .catch((error) => {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "No se pudo crear la orden",
+        text: "NO SE PUDO CREAR EL PEDIDO",
       });
     });
     cart.map((product) =>
