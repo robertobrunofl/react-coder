@@ -49,6 +49,7 @@ const FormCheckout = ({ handleSubmit, handleChange, errors, values}) => {
             <TextField className="text-estilos"
               id="outlined-basic"
               label="METODO DE PAGO"
+              placeholder="efectivo o tarjeta"
               variant="outlined"
               fullWidth
               color="warning"     

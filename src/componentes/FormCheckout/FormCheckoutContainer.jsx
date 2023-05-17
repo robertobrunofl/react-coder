@@ -62,6 +62,7 @@ export const FormCheckoutContainer = () => {
       nombre: "",
       email: "",
       telefono: null,
+      pago:""
     },
     onSubmit: checkoutFn,
     validationSchema: Yup.object().shape({
@@ -73,6 +74,10 @@ export const FormCheckoutContainer = () => {
         .email("El campo debe ser un email")
         .required("Este campo es obligatorio"),
       telefono: Yup.number().required("Este campo es obligatorio"),
+      pago: Yup.string()
+        .required("Este campo es obligatorio")
+        .min(7, "El metodo de pago debe tener al menos  caracteres")
+        .max(15, "El metodo de pago no puede superar los 15 caracteres"), 
     }),
     validateOnChange: false,
   });
